@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import aloha1 from "/public/img/aloha1.jpeg";
@@ -25,7 +25,7 @@ function srcset(image: string, size: number, rows = 1, cols = 1) {
 
 export default function Home() {
   return (
-    <ImageList variant="quilted" cols={4} sx={{ marginTop: "50px" }}>
+    <ImageList variant="quilted" cols={4} sx={{ marginTop: "70px" }}>
       {itemData.map((item) => (
         <ImageListItem
           key={item.img}
