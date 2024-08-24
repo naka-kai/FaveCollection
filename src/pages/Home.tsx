@@ -46,60 +46,60 @@ export default function Home() {
 const itemData = [
   {
     img: `${aloha1}`,
-    title: "Breakfast",
+    title: "aloha1",
     rows: 2,
     cols: 2,
   },
   {
     img: `${aloha2}`,
-    title: "Burger",
+    title: "aloha2",
   },
   {
     img: `${aloha11}`,
-    title: "Camera",
+    title: "aloha11",
   },
   {
     img: `${aloha3}`,
-    title: "Coffee",
+    title: "aloha3",
     cols: 2,
   },
   {
     img: `${aloha9}`,
-    title: "Hats",
+    title: "aloha9",
     cols: 2,
   },
   {
     img: `${aloha6}`,
-    title: "Honey",
+    title: "aloha6",
     author: "@arwinneil",
     rows: 2,
     cols: 2,
   },
   {
     img: `${aloha7}`,
-    title: "Basketball",
+    title: "aloha7",
   },
   {
     img: `${aloha8}`,
-    title: "Fern",
+    title: "aloha8",
   },
   {
     img: `${aloha10}`,
-    title: "Mushrooms",
+    title: "aloha10",
     rows: 2,
     cols: 2,
   },
   {
     img: `${aloha5}`,
-    title: "Tomato basil",
+    title: "aloha5",
   },
   {
     img: `${aloha4}`,
-    title: "Sea star",
+    title: "aloha4",
   },
   {
     img: `${aloha12}`,
-    title: "Bike",
+    title: "aloha12",
     cols: 2,
   },
 ];
