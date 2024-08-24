@@ -44,15 +44,7 @@ export default function Header() {
   return (
     <Box sx={{ width: "100%" }}>
       <Box sx={{ width: "100%", bgcolor: "background.paper" }}>
-        <div
-          style={{
-            position: "fixed",
-            top: "0",
-            width: "100%",
-            zIndex: "99",
-            backgroundColor: "white",
-          }}
-        >
+        <div className="fixed top-0 z-50 w-full bg-white">
           <Tabs value={value} onChange={handleTabChange} centered>
             <Tab label="HOME" {...a11yProps(0)} />
             <Tab label="コレクション" {...a11yProps(1)} />
