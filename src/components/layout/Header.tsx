@@ -16,13 +16,12 @@ export default function Header() {
   const navigate = useNavigate();
 
   const getValueFromPath = (path: string) => {
-    switch (path) {
-      case "/collection":
-        return 1;
-      case "/wishlist":
-        return 2;
-      default:
-        return 0;
+    if (path.startsWith("/collection")) {
+      return 1;
+    } else if (path.startsWith("/wishlist")) {
+      return 2;
+    } else {
+      return 0;
     }
   };
 

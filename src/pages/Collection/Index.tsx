@@ -18,11 +18,10 @@ import aloha_vertical_2 from "/public/img/aloha_vertical_2.jpg";
 import aloha_vertical_3 from "/public/img/aloha_vertical_3.jpg";
 import { useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Index() {
   const theme = useTheme();
-  const location = useLocation();
 
   const isSmDown = useMediaQuery(theme.breakpoints.down("sm"));
   const isMdDown = useMediaQuery(theme.breakpoints.down("md"));
@@ -46,7 +45,7 @@ export default function Index() {
           key={item.img}
           sx={{ display: "flex", justifyContent: "center" }}
         >
-          <Link to={location.pathname + "/" + Number(index + 1)}>
+          <Link to={`/collection/${Number(index + 1)}`}>
             <img
               srcSet={`${item.img}?fit=contain&auto=format&dpr=2 2x`}
               src={`${item.img}?fit=contain&auto=format`}
