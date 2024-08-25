@@ -20,7 +20,7 @@ import { useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { Link, useLocation } from "react-router-dom";
 
-export default function Collection() {
+export default function Index() {
   const theme = useTheme();
   const location = useLocation();
 
