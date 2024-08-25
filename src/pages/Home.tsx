@@ -1,18 +1,18 @@
 import React from "react";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
-import aloha1 from "/public/img/aloha1.jpeg";
-import aloha2 from "/public/img/aloha2.jpeg";
-import aloha3 from "/public/img/aloha3.jpg";
-import aloha4 from "/public/img/aloha4.jpeg";
-import aloha5 from "/public/img/aloha5.jpeg";
-import aloha6 from "/public/img/aloha6.jpeg";
-import aloha7 from "/public/img/aloha7.jpeg";
-import aloha8 from "/public/img/aloha8.jpeg";
-import aloha9 from "/public/img/aloha9.jpeg";
-import aloha10 from "/public/img/aloha10.jpeg";
-import aloha11 from "/public/img/aloha11.jpeg";
-import aloha12 from "/public/img/aloha12.jpeg";
+import aloha_horizontal_1 from "/public/img/aloha_horizontal_1.jpg";
+import aloha_horizontal_2 from "/public/img/aloha_horizontal_2.jpg";
+import aloha_horizontal_3 from "/public/img/aloha_horizontal_3.jpg";
+import aloha_horizontal_4 from "/public/img/aloha_horizontal_4.jpg";
+import aloha_square_1 from "/public/img/aloha_square_1.jpg";
+import aloha_square_2 from "/public/img/aloha_square_2.jpg";
+import aloha_square_3 from "/public/img/aloha_square_3.jpg";
+import aloha_square_4 from "/public/img/aloha_square_4.jpg";
+import aloha_square_5 from "/public/img/aloha_square_5.jpg";
+import aloha_vertical_1 from "/public/img/aloha_vertical_1.jpg";
+import aloha_vertical_2 from "/public/img/aloha_vertical_2.jpg";
+import aloha_vertical_3 from "/public/img/aloha_vertical_3.jpg";
 
 function srcset(image: string, size: number, rows = 1, cols = 1) {
   return {
@@ -45,61 +45,60 @@ export default function Home() {
 
 const itemData = [
   {
-    img: `${aloha1}`,
-    title: "aloha1",
+    img: `${aloha_square_1}`,
+    title: "aloha_square_1",
     rows: 2,
     cols: 2,
   },
   {
-    img: `${aloha2}`,
-    title: "aloha2",
+    img: `${aloha_horizontal_1}`,
+    title: "aloha_horizontal_1",
   },
   {
-    img: `${aloha11}`,
-    title: "aloha11",
+    img: `${aloha_horizontal_2}`,
+    title: "aloha_horizontal_2",
   },
   {
-    img: `${aloha3}`,
-    title: "aloha3",
+    img: `${aloha_horizontal_3}`,
+    title: "aloha_horizontal_3",
     cols: 2,
   },
   {
-    img: `${aloha9}`,
-    title: "aloha9",
+    img: `${aloha_horizontal_4}`,
+    title: "aloha_horizontal_4",
     cols: 2,
   },
   {
-    img: `${aloha6}`,
-    title: "aloha6",
-    author: "@arwinneil",
+    img: `${aloha_square_2}`,
+    title: "aloha_square_2",
     rows: 2,
     cols: 2,
   },
   {
-    img: `${aloha7}`,
-    title: "aloha7",
+    img: `${aloha_square_3}`,
+    title: "aloha_square_3",
   },
   {
-    img: `${aloha8}`,
-    title: "aloha8",
+    img: `${aloha_square_4}`,
+    title: "aloha_square_4",
   },
   {
-    img: `${aloha10}`,
-    title: "aloha10",
+    img: `${aloha_vertical_1}`,
+    title: "aloha_vertical_1",
     rows: 2,
     cols: 2,
   },
   {
-    img: `${aloha5}`,
-    title: "aloha5",
+    img: `${aloha_vertical_2}`,
+    title: "aloha_vertical_2",
   },
   {
-    img: `${aloha4}`,
-    title: "aloha4",
+    img: `${aloha_vertical_3}`,
+    title: "aloha_vertical_3",
   },
   {
-    img: `${aloha12}`,
-    title: "aloha12",
+    img: `${aloha_square_5}`,
+    title: "aloha_square_5",
     cols: 2,
   },
 ];
