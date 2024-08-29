@@ -1,24 +1,22 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Layout from "./components/layout/Layout";
-import Home from "./pages/Home";
-import Collection from "./pages/Collection/Index";
-import Show from "./pages/Collection/Show";
-import WishList from "./pages/Wishlist/Index";
+import { useEffect } from "react";
 import "./App.css";
+import RouteComponent from "./routes/Route";
+import axios from "axios";
 
 function App() {
+  useEffect(() => {
+    axios
+      .get("http://localhost:3001")
+      .then((response) => {
+        console.log(response.data.message);
+      })
+      .catch((e) => {
+        console.log(e.message);
+      });
+  }, []);
   return (
     <>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="/collection" element={<Collection />} />
-            <Route path="/collection/:id" element={<Show />} />
-            <Route path="/wishlist" element={<WishList />} />
-          </Route>
-        </Routes>
-      </Router>
+      <RouteComponent />
     </>
   );
 }
