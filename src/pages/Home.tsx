@@ -1,4 +1,3 @@
-import React from "react";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import aloha_horizontal_1 from "/public/img/aloha_horizontal_1.jpg";
