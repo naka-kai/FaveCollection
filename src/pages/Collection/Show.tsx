@@ -40,11 +40,11 @@ const Show = () => {
         </figure>
         <div className="my-2 flex items-center">
           <div
-            className={`bg-[${item.category.color}] mr-3 py-1 px-3 rounded-sm text-white`}
+            className={`bg-[${item.member.color}] mr-3 py-1 px-3 rounded-sm text-white`}
           >
-            <span className="text-xl">{item.category.name}</span>
+            <span className="text-xl">{item.member.name}</span>
           </div>
-          <span className="text-lg text-gray-400">{item.tag}</span>
+          <span className="text-lg text-gray-400">{item.tour}</span>
         </div>
         <div className="flex justify-end items-center">
           <button
