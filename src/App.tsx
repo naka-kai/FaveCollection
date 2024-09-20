@@ -6,7 +6,7 @@ import axios from "axios";
 function App() {
   useEffect(() => {
     axios
-      .get("http://localhost:3001")
+      .get("http://localhost:3003")
       .then((response) => {
         console.log(response.data.message);
       })

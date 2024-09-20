@@ -1,6 +1,6 @@
 import { Autocomplete, TextField } from "@mui/material";
 import { styled } from "@mui/system";
-import { TourOptionType, tours } from "../../../data/itemData";
+import { TourOptionType, tours } from "../../../data/data";
 
 const GroupHeader = styled("div")(() => ({
   position: "sticky",

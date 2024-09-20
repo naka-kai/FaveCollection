@@ -5,7 +5,7 @@ import {
   Select,
   SelectChangeEvent,
 } from "@mui/material";
-import { PhotoType, TourOptionType } from "../../../data/itemData";
+import { PhotoType, TourOptionType } from "../../../data/data";
 
 type PhotoProps = {
   setSelectedPhoto: React.Dispatch<React.SetStateAction<string | null>>;

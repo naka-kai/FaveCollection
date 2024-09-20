@@ -1,6 +1,6 @@
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
-import { itemData } from "../data/itemData";
+import { itemData } from "../data/data";
 
 function srcset(image: string, size: number, rows = 1, cols = 1) {
   return {

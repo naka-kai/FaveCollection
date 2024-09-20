@@ -7,7 +7,7 @@ import Title from "../../components/collection/form/Title";
 import Member from "../../components/collection/form/Member";
 import TourName from "../../components/collection/form/TourName";
 import Photo from "../../components/collection/form/Photo";
-import { TourOptionType } from "../../data/itemData";
+import { TourOptionType } from "../../data/data";
 
 type CreateProps = {
   onClose: () => void;

@@ -6,7 +6,7 @@ import {
   SelectChangeEvent,
 } from "@mui/material";
 import { useState } from "react";
-import { membersInfo } from "../../../data/itemData";
+import { membersInfo } from "../../../data/data";
 
 const Member = () => {
   const [member, setMember] = useState("");

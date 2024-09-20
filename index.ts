@@ -2,7 +2,7 @@ import express, { Application, Request, Response } from "express";
 import cors from "cors";
 
 const app: Application = express();
-const port = 3001;
+const port = 3003;
 
 app.use(cors({ origin: "http://localhost:5173" }));
 
