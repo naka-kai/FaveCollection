@@ -39,8 +39,8 @@ const Photo: React.FC<PhotoProps> = ({
           disabled={!selectedTour} // ツアーが選択されていない場合は無効にする
         >
           {photoOptions.map((photo, index) => (
-            <MenuItem key={index} value={photo.title}>
-              {photo.title}
+            <MenuItem key={index} value={photo.photo_title}>
+              {photo.photo_title}
             </MenuItem>
           ))}
         </Select>

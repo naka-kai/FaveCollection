@@ -1,6 +1,8 @@
 import { Autocomplete, TextField } from "@mui/material";
 import { styled } from "@mui/system";
-import { TourOptionType, tours } from "../../../data/data";
+import { TourOptionType, TourType } from "../../../data/data";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const GroupHeader = styled("div")(() => ({
   position: "sticky",
@@ -25,6 +27,8 @@ const TourName: React.FC<TourNameProps> = ({
   setSelectedPhoto,
   selectedTour,
 }) => {
+  const [tours, setTours] = useState<TourType[]>([]);
+
   // ツアー変更時
   const handleTourChange = (
     event: React.SyntheticEvent,
@@ -34,9 +38,17 @@ const TourName: React.FC<TourNameProps> = ({
     setSelectedPhoto(null); // ツアーが変更されたら、写真をリセット
   };
 
+  useEffect(() => {
+    axios.get("http://localhost:3003/tours").then((response) => {
+      console.log(response.data.tours);
+      const { tours } = response.data;
+      setTours(tours);
+    });
+  }, []);
+
   // ツアーオプションの生成
   const tourOptions: TourOptionType[] = tours.map((tour) => {
-    const firstLetter = tour.title[0].toUpperCase();
+    const firstLetter = tour.tour_title[0].toUpperCase();
     return {
       ...tour,
       firstLetter: /[0-9]/.test(firstLetter) ? "0-9" : firstLetter,
@@ -51,8 +63,10 @@ const TourName: React.FC<TourNameProps> = ({
           (a, b) => -b.firstLetter.localeCompare(a.firstLetter)
         )}
         groupBy={(option) => option.firstLetter}
-        getOptionLabel={(option) => option.title}
-        isOptionEqualToValue={(option, value) => option.title === value.title}
+        getOptionLabel={(option) => option.tour_title}
+        isOptionEqualToValue={(option, value) =>
+          option.tour_title === value.tour_title
+        }
         sx={{ width: "100%" }}
         renderInput={(params) => <TextField {...params} label="ツアー名" />}
         renderGroup={(params) => (

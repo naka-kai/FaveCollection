@@ -5,16 +5,26 @@ import {
   Select,
   SelectChangeEvent,
 } from "@mui/material";
-import { useState } from "react";
-import { membersInfo } from "../../../data/data";
+import { useEffect, useState } from "react";
+import { MemberType } from "../../../data/data";
+import axios from "axios";
 
 const Member = () => {
-  const [member, setMember] = useState("");
+  const [selectedMember, setSelectedMember] = useState("");
+  const [members, setMembers] = useState<MemberType[]>([]);
 
   // メンバー変更時
   const handleMemberChange = (event: SelectChangeEvent) => {
-    setMember(event.target.value as string);
+    setSelectedMember(event.target.value as string);
   };
+
+  useEffect(() => {
+    axios.get("http://localhost:3003/members").then((response) => {
+      console.log(response.data.members);
+      const { members } = response.data;
+      setMembers(members);
+    });
+  }, []);
 
   return (
     <div className="my-5">
@@ -23,17 +33,17 @@ const Member = () => {
         <Select
           labelId="member"
           id="member"
-          value={member}
+          value={selectedMember}
           label="member"
           onChange={handleMemberChange}
         >
-          {membersInfo.map((memberInfo) => (
+          {members.map((member) => (
             <MenuItem
-              key={memberInfo.num}
-              value={memberInfo.num}
-              sx={{ color: memberInfo.color }}
+              key={member.member_num}
+              value={member.member_num}
+              sx={{ color: member.color }}
             >
-              {memberInfo.name}
+              {member.name}
             </MenuItem>
           ))}
         </Select>
