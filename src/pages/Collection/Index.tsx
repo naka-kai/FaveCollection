@@ -7,17 +7,18 @@ import { Fab, useMediaQuery } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import { useTheme } from "@mui/material/styles";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { itemData } from "../../data/data";
+import { ItemType } from "../../data/data";
 import { useEffect, useState } from "react";
 import Create from "./Create";
 import { AnimatePresence, motion } from "framer-motion";
+import axios from "axios";
 
 export default function Index() {
   const theme = useTheme();
   const isSmDown = useMediaQuery(theme.breakpoints.down("sm"));
   const isMdDown = useMediaQuery(theme.breakpoints.down("md"));
   const cols = isSmDown ? 2 : isMdDown ? 3 : 4; // 何列表示させるかレスポンシブ対応
-
+  const [items, setItems] = useState<ItemType[]>([]);
   const [showCreate, setShowCreate] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
@@ -38,6 +39,15 @@ export default function Index() {
     }
   }, [location.pathname]);
 
+  useEffect(() => {
+    axios.get("http://localhost:3003/items").then((response) => {
+      console.log(response.data.items);
+      console.log(response.data.error);
+      const { items } = response.data;
+      setItems(items);
+    });
+  }, []);
+
   return (
     <div>
       <ImageList
@@ -50,26 +60,28 @@ export default function Index() {
         cols={cols}
         gap={20}
       >
-        {itemData.map((item, index) => (
+        {Object.keys(items).map((key) => (
           <ImageListItem
-            key={item.img}
+            key={key}
             sx={{ display: "flex", justifyContent: "center" }}
           >
-            <Link to={`/collection/${Number(index + 1)}`}>
+            <Link to={`/collection/${Number(key)}`}>
               <img
-                srcSet={`${item.img}?fit=contain&auto=format&dpr=2 2x`}
-                src={`${item.img}?fit=contain&auto=format`}
-                alt={item.title}
+                srcSet={`${
+                  items[Number(key)].img_path
+                }?fit=contain&auto=format&dpr=2 2x`}
+                src={`${items[Number(key)].img_path}?fit=contain&auto=format`}
+                alt={items[Number(key)].item_title}
                 style={{ objectFit: "contain" }}
                 loading="lazy"
               />
               <ImageListItemBar
-                title={item.title}
-                subtitle={item.tour}
+                title={items[Number(key)].item_title}
+                subtitle={`#${items[Number(key)].tour.tour_title}`}
                 actionIcon={
                   <IconButton
                     sx={{ color: "rgba(255, 255, 255, 0.54)" }}
-                    aria-label={`info about ${item.title}`}
+                    aria-label={`info about ${items[Number(key)].item_title}`}
                   >
                     <InfoIcon />
                   </IconButton>
